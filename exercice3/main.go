@@ -5,6 +5,9 @@ import "fmt"
 
 
 func checkgrade(grade float64){
+	if grade >= 100 || grade < 0 {
+		fmt.Println("Invalid grade")
+	}
 	if grade >= 90 {
 			fmt.Println("Grade 1 got : A ,",grade)
 		}else if grade >= 80 && grade<90 {
@@ -25,6 +28,7 @@ func main(){
 
 	// first assignement1
 	var grade [5]float64
+	var sum float64=0.0
 	
 
 	for i :=0; i <5; i++{
@@ -38,6 +42,7 @@ func main(){
 		if grade[i]<=100 && grade[i]>=0{
 
 			grade[i]=input
+			sum+=input
 
 		}else{
 			fmt.Println("Invalid grade, retry again :")
@@ -45,6 +50,7 @@ func main(){
 		}
 
 	}
+	fmt.Println("the average of the grades is:",sum/5)
 	// second assignment2
 	for i :=0; i<5; i++{
 
