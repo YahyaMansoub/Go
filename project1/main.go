@@ -30,7 +30,15 @@ func main(){
 			}
 
 			   fmt.Scan(&input)
-		       fmt.Println("Define range")
+			   var cat int
+			   fmt.Println("define range manually(1) or choose category(0)")
+			   fmt.Scan(&cat)
+			   if cat == 0{
+				fmt.Println("Choose a category(easy/medium/hard):")
+			    fmt.Scan(&input)
+				
+			   }
+		       fmt.Println("Define range:")
 		       var ub int64
 		       fmt.Scan(&ub)
 		       for ub<1{
