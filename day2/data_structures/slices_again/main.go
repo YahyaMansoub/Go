@@ -11,7 +11,7 @@ func printNumbers(numbers []int){
 	}
 func printNumberswithpointers(numbers []int){
 		for index,value:= range numbers{
-			log.Println("%v : %v : %p")
+			log.Println("%v : %v : %p", index, value, )
 		}
 	}
 func main(){

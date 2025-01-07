@@ -21,7 +21,6 @@ func freq(S []string)map[string]int{
 func main(){
 	slice:= []string{"aba","h","h","hg","aba","hg"}
 	Map := freq(slice)
-
 	log.Println(Map)
 	
 
