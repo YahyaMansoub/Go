@@ -13,7 +13,17 @@ func divide(a, b int) (int, error) {
 }
 
 
+func formatDivisionMessage(a,b int)(string,error){
+	divisionResult , err := divide(a,b)
+	if err != nil {
+		return "",errors.
+	}
+	
+}
+
 func main(){
+	var  a,b := 10,20
+	defer fmt.Println("A=",a)
 	var a, b int
 	fmt.Println("Enter two numbers:")
 	fmt.Scanln(&a, &b)
@@ -23,5 +33,6 @@ func main(){
 		} else {
 			fmt.Println("Quotient:", quotient)
 			}
+	
 
 }
