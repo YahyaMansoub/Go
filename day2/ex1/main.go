@@ -33,6 +33,7 @@ func main(){
 	fmt.Println("Area of rectangle is ", rectarray(arr))
 	fmt.Println("Area of rectangle is ", area(a,b))
 	fmt.Println(rectareacheck(a,b))
+	fmt.Println(increment())
 
 
 }
