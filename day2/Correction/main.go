@@ -15,6 +15,10 @@ type Person struct{
 	Education string
 }
 
+type Output struct{
+	AvrafeAge int  
+}
+
 
 func main(){
 
@@ -28,10 +32,26 @@ func main(){
 	f:=JSONFile{}
 	// f:=struct {People []Person}{}
 
-	err=json.Unmarshal(file, f)
+	err=json.Unmarshal(file,&f)
 	if err!=nil{
 		log.Fatal("could",err)
 	}
+
+	o:=Output{
+		Average: averageage,
+	}
+
+	outputFile, err:=json.Marshal(o)
+	if err!= nil{
+		log.Fatal("",err)
+
+		
+		
+	}
+	if err:= os.WriteFile("./ouput.json",outputFile){
+		log.Fatal("",err)
+	}
+
 }
 
 
