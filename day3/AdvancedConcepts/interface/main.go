@@ -8,6 +8,15 @@ import(
 
 func main(){
 
+	v x interface{}= "hello"
+	fmt.Prinln(x)
+	x=5
+	fmt.Prinln(x)
+	x=10.5
+	fmt.Prinln(x)
+
+
+
 	c := Circle{Radius:2.458}
 	PrintShapeInfo(c)
 
@@ -22,19 +31,13 @@ type Shape interface{
 type Circle struct{
 	Radius float64
 }
-
-
-
 func (s Circle) Area() float64{
 	return 3.14 * s.Radius * s.Radius
 }
-
-
 func (s Circle) Perimiter() float64{
 	return 2*3.14*s.Radius
 }
 func PrintShapeInfo(s Shape){
 	fmt.Prinln("Area :" s.Area())
 	fmt.Prinln("Perimiter :" s.Perimeter())
-
 }

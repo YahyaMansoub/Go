@@ -1,0 +1,14 @@
+Explanation:
+GET Handler: Responds with a JSON object { "status": "success", "message": "This is a GET response with JSON" }.
+POST Handler: Accepts JSON input, modifies it, and sends a response as a JSON object.
+How to test:
+Request:
+GET: GET http://localhost:8080/api/get
+POST: POST http://localhost:8080/api/post
+Body (JSON):
+json
+Copier le code
+{
+  "status": "success",
+  "message": "Hello, POST request!"
+}

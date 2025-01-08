@@ -14,15 +14,26 @@ func handleHelllo(w, http.ResponseWriter, t *http.Request){
 	fmt.Fprintf(w,"hello")
 }
 
-func main(){
 
-	paths := []string{"path1","path2","path3"}
-	for _, path := range paths {
-    http.HandleFunc(path, func(w http.ResponseWriter, req *http.Request) {
-        fmt.Fprintf(w, path)
-    })
+func handlePostRoot(w http.ResponseWriter, r *http.Request){
+	req:= make(map[string]any)
+	err:= json.NewDecoder(r.Body).Decode(&req)
+	if err!+ nil{
+		http.Error(w, err.Error(w, err.Error(), http.StatusInternalServerError))
+		return 
+	}
+	fmt.Fprintf(w, "Another Message")
 }
 
+func handleHello(w http.ResponseWriter, r *http.Request){
+	fmt.Fprintf(w,"hello")
+}
+
+func main(){
+
+	
+
+    http.HandleFunc("/", handleRoot)
 	http.HandleFunc("/hello",handler)
 	err:= http.ListenAndServe(":8080",nil)
 

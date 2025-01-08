@@ -39,6 +39,10 @@ func (c Truck) Details() string{
 	return "details for a Truck"
 }
 
+func PrintAll(p []Printable){
+	
+}
+
 
 func main(){
 	c1:=Car{

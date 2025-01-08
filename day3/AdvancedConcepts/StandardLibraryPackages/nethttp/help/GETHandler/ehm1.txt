@@ -1,0 +1,6 @@
+Explanation:
+GET Handler: The getHandler function listens for GET requests and responds with a simple JSON message.
+Route: /api/get will handle GET requests.
+Start Server: The server starts at localhost:8080.
+How to test:
+Request: GET http://localhost:8080/api/get

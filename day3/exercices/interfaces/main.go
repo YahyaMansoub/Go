@@ -46,8 +46,18 @@ func (t Triangle) Area() float64{
 	var s float64 =( a + b + c )/2
 	return math.Sqrt(s*(s-a)*(s-b)*(s-c))
 }
-
-
+func calculateArea(shape interface{}) {
+    switch s := shape.(type) {
+    case Circle:
+        fmt.Printf("Circle area: %.2f\n", s.Area())
+    case Rectangle:
+        fmt.Printf("Rectangle area: %.2f\n", s.Area())
+	case Triangle:
+        fmt.Printf("Triangle area: %.2f\n", s.Area())
+    default:
+        fmt.Println("Unknown shape")
+    }
+}
 func main(){
 	c:= Circle{Radius:2.14}
 	fmt.Println("The Area of the Circle is:",c.Area())
@@ -60,8 +70,5 @@ func main(){
 	t:= Triangle{SideA:15.12,SideB:2.1,SideC:6.12}
 	fmt.Println("The Area of the Circle is:",t.Area())
 	fmt.Println("The Perimeter of the Circle is:",t.Perimeter())
-
-
-	fmt.Println(c.(type))
 
 }

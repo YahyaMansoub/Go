@@ -1,0 +1,13 @@
+Explanation:
+POST Handler: The postHandler function listens for POST requests, decodes the JSON payload, and returns a success response with the received data.
+Route: /api/post will handle POST requests.
+Start Server: The server starts at localhost:8080.
+How to test:
+Request: POST http://localhost:8080/api/post
+Body (JSON):
+json
+Copier le code
+{
+  "name": "Alice",
+  "message": "Hello, this is a POST request!"
+}

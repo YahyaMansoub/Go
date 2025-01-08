@@ -1,0 +1,17 @@
+Explanation:
+GET Handler: Accepts query parameters name and message in the URL and returns them as JSON.
+POST Handler: Accepts JSON data in the body, decodes it, and returns the received data.
+Routes:
+GET /api/get?name=John&message=Hello for GET requests with query parameters.
+POST /api/post for POST requests with a JSON body.
+How to test:
+Request:
+GET: GET http://localhost:8080/api/get?name=John&message=Hello
+POST: POST http://localhost:8080/api/post
+Body (JSON):
+json
+Copier le code
+{
+  "name": "Alice",
+  "message": "Hello, this is a POST request!"
+}
