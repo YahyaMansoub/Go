@@ -99,5 +99,4 @@ func main(){
 		  MapofPeople[p.name] =p.education          
 }
     
-  
 }
