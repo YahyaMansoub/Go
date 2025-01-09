@@ -38,9 +38,10 @@ func postStudents(c *gin.Context) {
 func putStudentByID(c *gin.Context){
 	id := c.Param("id")
 	var updatedStudent student
-	if err := c.BindJSON(&newStudent); err != nil {
+	if err := c.BindJSON(&updatedStudent); err != nil {
         return
-    }for i,a := range students{
+    }
+	for i,a := range students{
 		if a.ID == id {
 			students[i]=updatedStudent
 			c.IndentedJSON(http.StatusUpdated, updatedStudent)
@@ -67,7 +68,6 @@ func deleteStudentByID(c *gin.Context){
 
 func getStudentByID(c *gin.Context){
 	id := c.Param("id")
-
 	for _,a := range students{
 		if a.ID == id {
 			c.IndentedJSON(http.StatusOK,a)
@@ -78,7 +78,6 @@ func getStudentByID(c *gin.Context){
 }
 func getStudentByNAME(c *gin.Context){
 	name := c.Param("name")
-
 	for _,a := range students{
 		if a.Name == name {
 			c.IndentedJSON(http.StatusOK,a)
