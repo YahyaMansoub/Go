@@ -13,7 +13,7 @@ func GenSlic() []int {
 	return slice
 }
 
-func squareNumber(number int, wg *sync.WaitGroup) {
+func squareNumber(number int, wg *sync.WaitGroup) 
 	defer wg.Done() 
 	result := number * number
 	fmt.Println("Square of", number, "is", result)
