@@ -16,6 +16,11 @@ type student struct {
     Courses  string `json:"courses"`
 }
 
+type getstudentby interface{
+	getStudentByID()
+	getStudentByNAME()
+}
+
 
 var students = []student{
     {ID: "1", Name: "Abdellah", Age: 26, Address :"derb deban ",Courses:" No Courses"},
@@ -64,8 +69,6 @@ func deleteStudentByID(c *gin.Context){
 	}
 	c.IndentedJSON(http.StatusNotFound, gin.H{"message": "student not found"})
 }
-
-
 func getStudentByID(c *gin.Context){
 	id := c.Param("id")
 	for _,a := range students{
