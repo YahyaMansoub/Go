@@ -50,12 +50,12 @@ type Address struct {
 	PostalCode string `json:"postal_code"`
 	Country    string `json:"country"`
 }
-
 type SalesReport struct {
-	Timestamp       time.Time   `json:"timestamp"`
-	TotalRevenue    float64     `json:"total_revenue"`
-	TotalOrders     int         `json:"total_orders"`
-	TopSellingBooks []BookSales `json:"top_selling_books"`
+	Date            time.Time `json:"date"`
+	TotalRevenue    float64   `json:"total_revenue"`
+	TotalOrders     int       `json:"total_orders"`
+	TotalBooksSold  int       `json:"total_books_sold"`
+	TopSellingBooks []string  `json:"top_selling_books"`
 }
 
 type BookSales struct {
