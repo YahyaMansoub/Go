@@ -1,0 +1,60 @@
+openapi: 3.0.0
+info:
+  title: FinalProject API
+  description: API for managing authors, books, customers, orders, and sales reports
+  version: 1.0.0
+paths:
+  /api/authors:
+    post:
+      summary: Create a new author
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                first_name:
+                  type: string
+                last_name:
+                  type: string
+                bio:
+                  type: string
+      responses:
+        '200':
+          description: Author created
+  /api/get/author/{id}:
+    get:
+      summary: Get an author by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Author details
+  /api/reports:
+    get:
+      summary: Get the sales reports
+      responses:
+        '200':
+          description: Sales reports
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    total_revenue:
+                      type: number
+                      format: float
+                    total_orders:
+                      type: integer
+                    total_books_sold:
+                      type: integer
+                    top_selling_books:
+                      type: array
+                      items:
+                        type: string
