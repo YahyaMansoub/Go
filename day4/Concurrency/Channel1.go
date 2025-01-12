@@ -24,8 +24,6 @@ func main(){
 	fmt.Println(vSqu)
 	vSquar := <- ch
 	fmt.Println(vSquar)
-
-
 } 
 
 
